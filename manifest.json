@@ -1,0 +1,41 @@
+{
+    "name": "Hello World",
+    "version": "1.0.0",
+    "description": "Simple Microsoft Edge Extension",
+    "author": "Hrishikesh Kale",
+    "icons": {
+       "16": "icons/icon_16.png",
+       "32": "icons/icon_32.png",
+       "48": "icons/icon_48.png",
+       "128": "icons/icon_128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "20": "icons/icon_20.png",
+            "25": "icons/icon_25.png",
+            "30": "icons/icon_30.png",
+            "40": "icons/icon_40.png"
+        },
+        "default_title": "Hello World"
+    },
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "storage",
+        "activeTab",
+        "<all_urls>"
+    ],
+    "minimum_edge_version": "37.14316.1000.0",
+    "background": {
+    "page": "background.html",
+    "persistent": true
+  },
+    "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css" : ["css/light.css"],
+      "js": ["js/content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
